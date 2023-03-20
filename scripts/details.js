@@ -1,5 +1,9 @@
 import { arrayVideos } from "../scripts/data.js";
 
+
+// Actualización del array de videos cuando se añade uno nuevo.
+const arrayVideosFinal = JSON.parse(sessionStorage.getItem("videos")) || arrayVideos;
+
 // 5. Creamos la función para pintar el video principal que se va a reproducir y la lista de los otros videos que hay por reproducir.
 const printVideo = (containerOne, containerTwo, videoPrincipal, videosList) => {
   // Vaciar los contenedores
@@ -46,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const idVideoNumber = Number(idCVideoString);
 
   // 2. Hacer la busqueda del video al cual le hemos dado click
-  const videoClick = arrayVideos.find((video) => video.id === idVideoNumber);
+  const videoClick = arrayVideosFinal.find((video) => video.id === idVideoNumber);
   //console.log(videoClick);
 
   // 3. Cambiando el contenido de la etiqueta título con el nombre del video.
@@ -56,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 4. Capturamos el contenedor donde vamos a pintar todos los videos. Los videos sugeridos no tendrán en cuenta el video que se estará mostrando.
   const containerVideo = document.querySelector(".main__videoPrincipal");
   const containerVideos = document.querySelector(".videosSugeridos");
-  const videosLateral = arrayVideos.filter(
+  const videosLateral = arrayVideosFinal.filter(
     (video) => video.id !== idVideoNumber
   );
 

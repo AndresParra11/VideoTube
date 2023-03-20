@@ -1,5 +1,9 @@
 import { arrayVideos } from "./data.js";
 
+
+// Actualización del array de videos cuando se añade uno nuevo.
+const arrayVideosFinal = JSON.parse(sessionStorage.getItem("videos")) || arrayVideos;
+
 // Mostrar los videos listados en containers.
 // 1. Capturamos el contenedor donde vamos a pintar todos los videos.
 const containerVideos = document.querySelector(".main__videos");
@@ -19,9 +23,9 @@ const printVideos = (container, videosList) => {
             <section class="infoVideos" data-video="videos" name=${video.id}>
                 <div class="contenedor__title" data-video="videos" name=${video.id}>
                     <figure class="infoVideos__figure" data-video="videos" name=${video.id}>
-                        <img class="infoVideos__imageAuthor" name=${video.seeIn.author} src=${video.seeIn.imageAuthor} alt=${video.seeIn.author} data-video="videos">
+                        <img class="infoVideos__imageAuthor" name=${video.id} src=${video.seeIn.imageAuthor} alt=${video.seeIn.author} data-video="videos">
                     </figure>
-                    <h3 class="infoVideos__title" name=${video.seeIn.title} data-video="videos">${video.seeIn.title}</h3>
+                    <h3 class="infoVideos__title" name=${video.id} data-video="videos">${video.seeIn.title}</h3>
                 </div>
                 <h4 class="infoVideos__author" data-video="videos" name=${video.id}>${video.seeIn.author}</h4>
                 <h4 class="infoVideos__viewsAndPublication" data-video="videos" name=${video.id}>${video.seeIn.views} - ${video.seeIn.publication}</h4>
@@ -32,7 +36,7 @@ const printVideos = (container, videosList) => {
 
 // 3. Escuchar el evento DomConentLoad y cuando suceda este evento se deben imprimir los background de los videos y su información.
 document.addEventListener('DOMContentLoaded', ()=>{
-    printVideos(containerVideos, arrayVideos);
+    printVideos(containerVideos, arrayVideosFinal);
 });
 
 // 4. Escuchar evento de click en la página, para cuando se haga click en las diferentes categorías flitre los videos que se muestran en pantalla.
@@ -40,54 +44,57 @@ let category = {};
 document.addEventListener("click", (event)=>{
     switch(event.target.id){
         case ("category__Todos"):
-            category = arrayVideos;
+            category = arrayVideosFinal;
             printVideos(containerVideos, category);
             break;
         case ("category__Música"):
-            category = arrayVideos.filter(video => video.seeIn.category === "Música");
+            category = arrayVideosFinal.filter(video => video.seeIn.category === "Música");
             printVideos(containerVideos, category);
 
             break;
         case ("category__Programación"):
-            category = arrayVideos.filter(video => video.seeIn.category === "Programación");
+            category = arrayVideosFinal.filter(video => video.seeIn.category === "Programación");
             printVideos(containerVideos, category);
             break;
         case ("category__Motivación"):
-            category = arrayVideos.filter(video => video.seeIn.category === "Motivación");
+            category = arrayVideosFinal.filter(video => video.seeIn.category === "Motivación");
             printVideos(containerVideos, category);
             break;
 
         case ("category__LaPulla"):
-            category = arrayVideos.filter(video => video.seeIn.category === "La Pulla");
+            category = arrayVideosFinal.filter(video => video.seeIn.category === "La Pulla");
             printVideos(containerVideos, category);
             break;
     };
 });
 
-// 5. Escuchar el evento click sobre las cards.
+// 5. Escuchar el evento click y si se da sobre las cards lleva a la página de detalles y reproduce el video, si se da al logo o título de VideoTube recargará la página.
 document.addEventListener("click", (event)=>{
+    console.log(event.target);
     const dataCardAttribute = event.target.getAttribute("data-video");
     if(dataCardAttribute == "videos"){
         const idVideo = event.target.getAttribute('name');
         sessionStorage.setItem("idVideo", JSON.stringify(idVideo));
         window.location.href = "./pages/details.html"
-    };
+    } else if(dataCardAttribute == "videoTube"){
+        window.location.href = "../index.html"
+    }
 });
 
 // 6. Escuchar el evento click sobre el logo y título de VideoTube. y que redirigirá a la página principal.
-document.addEventListener("click", (event)=>{
-    const dataCardAttribute = event.target.getAttribute("data-video");
-    if(dataCardAttribute == "videoTube"){
-        window.location.href = "/index.html"
-    };
-});
+// document.addEventListener("click", (event)=>{
+//     const dataCardAttribute = event.target.getAttribute("data-video");
+//     if(dataCardAttribute == "videoTube"){
+//         window.location.href = "/index.html"
+//     };
+// });
 
 // 7. Busqueda de videos por título.
 const filterByTitle = (termSearch = '', videosList) =>{
     const videosFiltred = videosList.filter(video => video.seeIn.title.toLowerCase().includes(termSearch.toLowerCase()));
     const result = videosFiltred.length ? videosFiltred : videosList;
 
-    const messageResult = videosFiltred.length ? true : "Este video no existe."
+    const messageResult = videosFiltred.length ? false : "Este video no existe."
 
     return{
         resultSearch: result,
@@ -104,16 +111,20 @@ formSearch.addEventListener("submit", (event)=>{
     const searchTerm = inputSearch.value;
 
     if(searchTerm){
-        const searchResult= filterByTitle(searchTerm, arrayVideos);
+        const searchResult= filterByTitle(searchTerm, arrayVideosFinal);
         printVideos(containerVideos, searchResult.resultSearch);
 
+        if(searchResult.messageSearch){
+            Swal.fire("Oops!", searchResult.messageSearch, "error");
+        };
+
     } else {
-        alert("No has ingresado un video para buscar.");
+        Swal.fire("Oops!", "No has ingresado un video para buscar.", "error");
     };
 });
 
 // const categorys = [];
-// arrayVideos.forEach(video=>{
+// arrayVideosFinal.forEach(video=>{
 //     if(!categorys.includes(video.seeIn.category)){
 //         categorys.push(video.seeIn.category);
 //     }

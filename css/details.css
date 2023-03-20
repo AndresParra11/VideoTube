@@ -24,7 +24,7 @@ header{
 
 .header__section{
     display: flex;
-    width: 60%;
+    width: 100%;
     flex-direction: row;
     align-items: center;
 }
@@ -62,8 +62,9 @@ header{
 .header__containerSearch{
     display: flex;
     flex-direction: row;
-    width: 72%;
-    height: 48px;
+    width: 50%;
+    height: 100%;
+    margin-right: 80px;
 }
 
 .header__containerSearch input{
@@ -87,6 +88,24 @@ header{
     background: #373737;
     border: 1px hidden #6F6F6F;
     border-radius: 0px 8px 8px 0px;
+    cursor: pointer;
+}
+
+.addVideos{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.addVideos:hover{
+    font-size: 18px;
+    font-weight:bold;
 }
 
 .header__nav{
@@ -107,6 +126,7 @@ header{
     background: #373737;
     border: 1px solid #6F6F6F;
     border-radius: 44px;
+
 }
 
 .category__button:focus{
