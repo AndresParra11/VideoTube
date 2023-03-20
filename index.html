@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./assets/images/Logo.png">
+    <title>VideoTube</title>
+</head>
+<body>
+    <header class="header">
+        <section class="header__section" >
+            <figure class="header__figure" data-video="videoTube">
+                <img src="./assets/images/Logo.png" alt="Logo VideoTube" data-video="videoTube">
+            </figure>
+            <h1 class="header__pageTitle" data-video="videoTube">VideoTube</h1>
+            <form class="header__containerSearch">
+                <input type="text" placeholder="Buscar video">
+                <button type="submit">
+                    <figure>
+                        <img src="./assets/images/search.png" alt="Logo de buscar">
+                    </figure>
+                </button>
+            </form>
+        </section> 
+        <nav class="header__nav">
+            <button id="category__Todos" class="category__button">Todos</button>
+            <button id="category__Música" class="category__button">Música</button>
+            <button id="category__Programación" class="category__button">Programación</button>
+            <button id="category__Motivación" class="category__button">Motivación</button>
+            <button id="category__LaPulla" class="category__button">La Pulla</button>
+        </nav>
+    </header>
+    <main class="main">
+        <section class="main__videos"></section>
+    </main>
+    <footer></footer>
+    <script src="./scripts/script.js" type="module"></script>
+</body>
+</html>  
