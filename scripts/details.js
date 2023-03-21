@@ -38,7 +38,6 @@ const printVideo = (containerOne, containerTwo, videoPrincipal, videosList) => {
   });
 };
 
-
 // 6. Filtrar los otros vídeos diferentes al video principal que se pintarán en la barra lateral de los videos.
 
 // 7. Se pinta el video principal que se va a reproducir y la lista de los otros videos que hay por reproducir.
@@ -78,7 +77,5 @@ document.addEventListener("click", (event) => {
     window.location.href = "../pages/details.html";
   }
 });
-
-
 
 

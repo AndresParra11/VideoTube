@@ -133,3 +133,37 @@ formSearch.addEventListener("submit", (event)=>{
 // console.log(categorys);
 
 
+const slider = document.querySelector(".header__nav");
+
+let maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+let interval = null;
+let step = 1;
+
+console.log(maxScrollLeft, slider.scrollWidth, slider.clientWidth);
+
+const start = () => {
+    interval = setInterval(function () {
+        slider.scrollLeft += step;
+        if (Math.ceil(slider.scrollLeft) === maxScrollLeft) {
+            step *= -1;
+        } else if(slider.scrollLeft === 0){
+            step *= -1;
+        }
+    }, 20);
+};
+
+const stop = () => {
+    clearInterval(interval);
+}
+
+slider.addEventListener("mouseover", ()=>{
+    stop();
+})
+
+slider.addEventListener("mouseout", ()=>{
+    start();
+})
+
+start();
+
+
