@@ -327,4 +327,20 @@ export const arrayVideos = [
       publication: "hace 9 años",
     },
   },
+  {
+    id: 21,
+    backgroundImage:
+      "https://i.ytimg.com/vi/h-ck74tWarI/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgBvgeAAtAFigIMCAAQARhJIFAoZTAP&rs=AOn4CLDPJREBVAfV5Fz4d42DuiSMf4TQcw",
+    duration: "3:45",
+    linkVideo: "https://www.youtube.com/embed/h-ck74tWarI?autoplay=1",
+    seeIn: {
+      title: "RBD - Sálvame (4K)",
+      author: "RBD Slovenija",
+      imageAuthor:
+        "https://yt3.ggpht.com/lFWt7pxyXWx0lUb78F2iLRcDh11VB042QtsqQL3gN3TV0FvRU9hpyvJhy9BPa0mfyZLyYmUlfuA=s88-c-k-c0x00ffffff-no-rj",
+      views: "357.648 vistas",
+      category: "Música",
+      publication: "hace 1 año",
+    },
+  },
 ];
