@@ -247,10 +247,6 @@ main{
 }
 
 @media screen and (max-width: 700px) {
-    header{
-        margin-right: 0px;
-    }
-
     .header__section{
         padding-right: 40px;
     }
