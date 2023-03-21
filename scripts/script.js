@@ -132,14 +132,12 @@ formSearch.addEventListener("submit", (event)=>{
 
 // console.log(categorys);
 
-
+// 9. Crea dos funciones para crear un slider dinámico 
 const slider = document.querySelector(".header__nav");
 
 let maxScrollLeft = slider.scrollWidth - slider.clientWidth;
 let interval = null;
 let step = 1;
-
-console.log(maxScrollLeft, slider.scrollWidth, slider.clientWidth);
 
 const start = () => {
     interval = setInterval(function () {
