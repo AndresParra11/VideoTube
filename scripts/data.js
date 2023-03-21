@@ -54,8 +54,7 @@ export const arrayVideos = [
     backgroundImage:
       "https://i.ytimg.com/vi/dkkPQ04xGDg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCU0xm81SktC7AWWrwe3GBwBWK8BQ",
     duration: "4:12",
-    linkVideo:
-      "https://www.youtube.com/embed/dkkPQ04xGDg?autoplay=1",
+    linkVideo: "https://www.youtube.com/embed/dkkPQ04xGDg?autoplay=1",
     seeIn: {
       title: "Entre Comillas - Luis Alfonso | En Vivo",
       author: "Luis Alfonso",
@@ -103,8 +102,7 @@ export const arrayVideos = [
     backgroundImage:
       "https://i.ytimg.com/vi/LnFr5ITzeqU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFTyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDBPfzd_uJy_RHt6kCCoQZybnUy_g",
     duration: "22:02",
-    linkVideo:
-      "https://www.youtube.com/embed/LnFr5ITzeqU?autoplay=1",
+    linkVideo: "https://www.youtube.com/embed/LnFr5ITzeqU?autoplay=1",
     seeIn: {
       title:
         "7 ERRORES de Programadores Novatos en su PRIMER TRABAJO que DEBES EVITAR",
@@ -121,8 +119,7 @@ export const arrayVideos = [
     backgroundImage:
       "https://i.ytimg.com/vi/gjwGJBynRrE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFTyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCCZSr25Npht5kM9qufwURspyp80A",
     duration: "11:31",
-    linkVideo:
-      "https://www.youtube.com/embed/gjwGJBynRrE?autoplay=1",
+    linkVideo: "https://www.youtube.com/embed/gjwGJBynRrE?autoplay=1",
     seeIn: {
       title: "Para de ver TUTORIALES! Haz esto... (al aprender a programar)",
       author: "Programador X",
@@ -138,8 +135,7 @@ export const arrayVideos = [
     backgroundImage:
       "https://i.ytimg.com/vi/UAt-Ae1YVaA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFTyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBWiKgVdnJcWCov2FXRKbIxJBoeQg",
     duration: "5:37",
-    linkVideo:
-      "https://www.youtube.com/embed/UAt-Ae1YVaA?autoplay=1",
+    linkVideo: "https://www.youtube.com/embed/UAt-Ae1YVaA?autoplay=1",
     seeIn: {
       title: "¡Las 4 tecnologías para conseguir EMPLEO como Back-End en 2023!",
       author: "OpenBootcamp",
@@ -155,8 +151,7 @@ export const arrayVideos = [
     backgroundImage:
       "https://i.ytimg.com/vi/KpgVF0mXOUs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFTyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBuq1BIvAbH0M9X4ndrJ7DMGhvndQ",
     duration: "4:41",
-    linkVideo:
-      "https://www.youtube.com/embed/KpgVF0mXOUs?autoplay=1",
+    linkVideo: "https://www.youtube.com/embed/KpgVF0mXOUs?autoplay=1",
     seeIn: {
       title: "Curso Visual Studio Code & Emmet - jonmircha",
       author: "jonmircha",
@@ -206,7 +201,8 @@ export const arrayVideos = [
     duration: "28:37",
     linkVideo: "https://www.youtube.com/embed/cxE6ASQjcTs?autoplay=1",
     seeIn: {
-      title: "Reforma a la salud: ¿El desastre o la salvación de Colombia? | La Pulla",
+      title:
+        "Reforma a la salud: ¿El desastre o la salvación de Colombia? | La Pulla",
       author: "La Pulla",
       imageAuthor:
         "https://yt3.ggpht.com/GiWcuoErtADc9j0SulU80dBsPJV5RTkutRX2iyqhQEI7-Y_FQH9lgjK3rs_Fz5nJvVIAOKMpEg=s88-c-k-c0x00ffffff-no-rj",
@@ -252,8 +248,7 @@ export const arrayVideos = [
     backgroundImage:
       "https://i.ytimg.com/vi/4AX9lCrCsnY/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFTyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAkRv3cmbBoCFLYXfyOLvW8A5Q6Rw",
     duration: "7:55",
-    linkVideo:
-      "https://www.youtube.com/embed/4AX9lCrCsnY?autoplay=1",
+    linkVideo: "https://www.youtube.com/embed/4AX9lCrCsnY?autoplay=1",
     seeIn: {
       title:
         '"Lo que más necesita un adolescente es un adulto que se hace cargo". Arun Mansukhani, psicólogo',
@@ -270,8 +265,7 @@ export const arrayVideos = [
     backgroundImage:
       "https://i.ytimg.com/vi/Qtp02afizYE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFTyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB0jhqSi0J_rtSKn-IR3IdeLnrUJg",
     duration: "6:37",
-    linkVideo:
-      "https://www.youtube.com/embed/Qtp02afizYE?autoplay=1",
+    linkVideo: "https://www.youtube.com/embed/Qtp02afizYE?autoplay=1",
     seeIn: {
       title:
         '"El cuerpo habla y si no lo escuchas grita". Elizabeth Clapés, psicóloga',
@@ -307,8 +301,7 @@ export const arrayVideos = [
     duration: "3:01",
     linkVideo: "https://www.youtube.com/embed/2b3xG_YjgvI?autoplay=1",
     seeIn: {
-      title:
-        "Elevator pitch. Tienes 20 segundos - eduCaixa",
+      title: "Elevator pitch. Tienes 20 segundos - eduCaixa",
       author: "iurisdocTV",
       imageAuthor:
         "https://yt3.ggpht.com/ytc/AL5GRJX-En09nLAcELK9PPtkOKS00JtXHIfUQs_qlRkkFw=s88-c-k-c0x00ffffff-no-rj",
@@ -333,5 +326,5 @@ export const arrayVideos = [
       category: "Motivación",
       publication: "hace 9 años",
     },
-  }
+  },
 ];
