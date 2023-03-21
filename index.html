@@ -1,46 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="shortcut icon" href="./assets/images/Logo.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="shortcut icon" href="./assets/images/Logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>VideoTube</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <section class="header__section">
-            <figure class="header__figure" data-video="videoTube">
-                <img src="./assets/images/Logo.png" alt="Logo VideoTube" data-video="videoTube">
+      <section class="header__section">
+        <figure class="header__figure" data-video="videoTube">
+          <img
+            src="./assets/images/Logo.png"
+            alt="Logo VideoTube"
+            data-video="videoTube"
+          />
+        </figure>
+        <h1 class="header__pageTitle" data-video="videoTube">VideoTube</h1>
+        <form class="header__containerSearch">
+          <input type="text" placeholder="Buscar video" />
+          <button type="submit">
+            <figure>
+              <img src="./assets/images/search.png" alt="Logo de buscar" />
             </figure>
-            <h1 class="header__pageTitle" data-video="videoTube">VideoTube</h1>
-            <form class="header__containerSearch">
-                <input type="text" placeholder="Buscar video">
-                <button type="submit">
-                    <figure>
-                        <img src="./assets/images/search.png" alt="Logo de buscar">
-                    </figure>
-                </button>
-            </form>
-            <a href="./pages/formVideos.html" class="addVideos">Agregar nuevo video</a>
-        </section>
-        <nav class="header__nav">
-            <button id="category__Todos" class="category__button">Todos</button>
-            <button id="category__Música" class="category__button">Música</button>
-            <button id="category__Programación" class="category__button">Programación</button>
-            <button id="category__Motivación" class="category__button">Motivación</button>
-            <button id="category__LaPulla" class="category__button">La Pulla</button>
-        </nav>
+          </button>
+        </form>
+        <a href="./pages/formVideos.html" class="addVideos"
+          >Agregar nuevo video</a
+        >
+      </section>
+      <nav class="header__nav">
+        <button id="category__Todos" class="category__button">Todos</button>
+        <button id="category__Música" class="category__button">Música</button>
+        <button id="category__Programación" class="category__button">
+          Programación
+        </button>
+        <button id="category__Motivación" class="category__button">
+          Motivación
+        </button>
+        <button id="category__LaPulla" class="category__button">
+          La Pulla
+        </button>
+      </nav>
     </header>
     <main class="main">
-        <section class="main__videos"></section>
+      <section class="main__videos"></section>
     </main>
     <footer></footer>
     <script src="./scripts/script.js" type="module"></script>
-</body>
-
+  </body>
 </html>

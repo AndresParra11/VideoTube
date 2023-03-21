@@ -19,6 +19,7 @@ const printVideos = (container, videosList) => {
             <figure class="videos__figure" data-video="videos" name=${video.id}>
                 <img class="videos__backbroundImage" name=${video.id} src=${video.backgroundImage} alt=${video.seeIn.title} data-video="videos">
             </figure>
+            <button class="deleteVideo" data-video="deleteVideos" name=${video.id}><span class="material-symbols-outlined"  data-video="deleteVideos" name=${video.id}>delete</span></button>
             <div class="container__duration" data-video="videos" name=${video.id}><p class="videos__duration" data-video="videos" name=${video.id}>${video.duration}</p></div>
             <section class="infoVideos" data-video="videos" name=${video.id}>
                 <div class="contenedor__title" data-video="videos" name=${video.id}>
@@ -76,28 +77,31 @@ document.addEventListener("click", (event) => {
   }
 });
 
-// 5. Escuchar el evento click y si se da sobre las cards lleva a la página de detalles y reproduce el video, si se da al logo o título de VideoTube recargará la página.
+// 5. Escuchar el evento click y si se da sobre las cards lleva a la página de detalles y reproduce el video, si se da al logo o título de VideoTube recargará la página y otro elseif para eliminar un video.
 document.addEventListener("click", (event) => {
-  console.log(event.target);
   const dataCardAttribute = event.target.getAttribute("data-video");
+  const classCardAttribute = event.target.getAttribute("class");
+  const idVideo = event.target.getAttribute("name");
+
   if (dataCardAttribute == "videos") {
-    const idVideo = event.target.getAttribute("name");
     sessionStorage.setItem("idVideo", JSON.stringify(idVideo));
     window.location.href = "./pages/details.html";
   } else if (dataCardAttribute == "videoTube") {
     window.location.href = "../index.html";
+  } else if (
+    dataCardAttribute == "deleteVideos" &&
+    classCardAttribute == "material-symbols-outlined"
+  ) {
+    const indexVideoEliminar = arrayVideosFinal.findIndex(
+      (video) => video.id == idVideo
+    );
+    arrayVideosFinal.splice(indexVideoEliminar, 1);
+    sessionStorage.setItem("videos", JSON.stringify(arrayVideosFinal));
+    window.location.href = "../index.html";
   }
 });
 
-// 6. Escuchar el evento click sobre el logo y título de VideoTube. y que redirigirá a la página principal.
-// document.addEventListener("click", (event)=>{
-//     const dataCardAttribute = event.target.getAttribute("data-video");
-//     if(dataCardAttribute == "videoTube"){
-//         window.location.href = "/index.html"
-//     };
-// });
-
-// 7. Busqueda de videos por título.
+// 6. Busqueda de videos por título.
 const filterByTitle = (termSearch = "", videosList) => {
   const videosFiltred = videosList.filter((video) =>
     video.seeIn.title.toLowerCase().includes(termSearch.toLowerCase())
@@ -112,7 +116,7 @@ const filterByTitle = (termSearch = "", videosList) => {
   };
 };
 
-// 8. Capturamos el form y luego escuchamos el evento submit para realizar la búsqueda del video por el título. Se deben colocar las tíldes como están los nombres
+// 7. Capturamos el form y luego escuchamos el evento submit para realizar la búsqueda del video por el título. Se deben colocar las tíldes como están los nombres
 const formSearch = document.querySelector(".header__containerSearch");
 
 formSearch.addEventListener("submit", (event) => {
@@ -141,7 +145,7 @@ formSearch.addEventListener("submit", (event) => {
 
 // console.log(categorys);
 
-// 9. Crea dos funciones para crear un slider dinámico
+// 8. Crea dos funciones para crear un slider dinámico
 const slider = document.querySelector(".header__nav");
 
 let maxScrollLeft = slider.scrollWidth - slider.clientWidth;

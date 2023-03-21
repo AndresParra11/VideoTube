@@ -173,6 +173,21 @@ main {
   object-fit: cover;
 }
 
+.deleteVideo {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0%;
+  left: 93.4%;
+  cursor: pointer;
+}
+
+.material-symbols-outlined {
+  width: 100%;
+  font-size: 18px !important;
+  cursor: pointer;
+}
+
 .container__duration {
   background-color: #181818;
   border-radius: 2px;
