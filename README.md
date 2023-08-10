@@ -3,6 +3,10 @@
 
 Se realiza un aplicativo que simule la reproducción de videos musicales traidos de youtube.
 
+## Despliegue
+
+[VideoTube](https://ap11videotube.netlify.app/)
+
 ## Requerimientos técnicos
 - Arreglos y objetos
 - Funciones
